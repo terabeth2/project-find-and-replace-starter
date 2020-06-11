@@ -21,6 +21,20 @@ function getCellElements (currentRowElement) {
 
 
 // YOUR CODE GOES HERE
+replaceAllButton.addEventListener ("click" , function() {
+    let findvalue = findInput.value 
+    let replacevalue = replaceInput.value
+
+    for (let rowIndex = 0; rowIndex < rowElements.length; rowIndex ++) {
+        const cellElement = getCellElements (rowElements [rowIndex])
+        for (let cellIndex = 0; cellIndex < cellElement.length; cellIndex ++) {
+            let randomElement = cellElement [cellIndex]
+            while(randomElement.innerHTML.includes (findvalue)) {
+                randomElement.innerHTML = randomElement.innerHTML.replace(findvalue, replacevalue)
+            }
+        }
+    }
+}) 
 
 
 // One last thing: dedicate very careful attention to using variables and
